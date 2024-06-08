@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        @keyframes rotate {
+            from { rotate: 0deg; }
+            to { rotate: 360deg; }
+        }
+        @keyframes draw {
+            from { height: 20px; }
+            to { height: 750px; }
+        }
+
+        #hello {
+            object-position: top;
+            object-fit: cover;
+            width: 750px;
+            animation: draw 4s linear;
+            display: none;
+        }
+        #loading {
+            animation: rotate 2s linear infinite;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <p>This is a calculator. Please enter two numbers below and click "Calculate".</p>
+    <img src="loading.png" id="loading">
+    <input type="text"> + <input type="text">
+    <input type="submit" value="Calculate"
+    onclick="
+        document.getElementById('loading').style.display = 'inline';
+        document.getElementById('hello').style.display = 'none';
+        setTimeout(function () {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('hello').style.display = 'inline';
+        }, 2000);
+    ">
+    <br>
+    <img src="mbhello.png" id="hello">
+</body>
+
+</html>
